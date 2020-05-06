@@ -22,13 +22,9 @@ $ git clone https://github.com/akshatvg/speakOut
 $ cd speakOut
 ```
 
-<br>
-
 ## Contributors
 
 * [Akshat Gupta](https://www.akshatvg.com)
-
-<br>
 
 ## Future Scope
 - Add Web RTM
