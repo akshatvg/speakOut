@@ -1,6 +1,6 @@
 # speakOut
 
-Conduct meetings, project reviews, informal hangout sessions using speakOut- the most secure application in the market today in high definition video and audio.
+Conduct meetings, project reviews & informal hangout sessions using speakOut- the most secure application in the market today in high definition real time video and audio.
 
 #### It's time to speakOut!
 
