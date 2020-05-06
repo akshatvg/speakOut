@@ -1,6 +1,6 @@
-# Speak-Out
+# speakOut
 
-Conduct meetings, project reviews, informal hangout sessions using speakOut with the best quality live videos and audios with the most secure application in the marketing today.
+Conduct meetings, project reviews, informal hangout sessions using speakOut with the best quality live videos and audios with the most secure application in the market today.
 
 #### It's time to speakOut!
 
