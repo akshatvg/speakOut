@@ -1,38 +1,91 @@
+# speakOut
+
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/akshatvg/speakOut?logo=github&style=social)](https://github.com/akshatvg/) [![GitHub last commit](https://img.shields.io/github/last-commit/akshatvg/speakOut?style=social&logo=git)](https://github.com/akshatvg/) [![GitHub stars](https://img.shields.io/github/stars/akshatvg/speakOut?style=social)](https://github.com/akshatvg/speakOut/stargazers) [![GitHub forks](https://img.shields.io/github/forks/akshatvg/speakOut?style=social&logo=git)](https://github.com/akshatvg/speakOut/network) [![Netlify Status](https://api.netlify.com/api/v1/badges/5846e3cd-3af6-4e10-a30f-70353d6c86e6/deploy-status)](https://app.netlify.com/sites/speakout/deploys)
+
+Conduct meetings, project reviews & informal hangout sessions using speakOut- the most secure application in today's market in high definition real time video and audio.
+
 <p align="center">
-	<img src="https://github.com/akshatvg/speakOut/blob/master/assets/img/logo.png" />
-	<h2 align="center">speakOut</h2>
-	<h4 align="center">Conduct meetings, project reviews & informal hangout sessions using speakOut- the most secure application in today's market in high definition real time video and audio.<h4>
+<a href="https://speakout.akshatvg.com">
+<img src="https://github.com/akshatvg/speakOut/blob/master/assets/img/logo.png" width="120px" height="120px" alt="speakOut Logo"/>
+</a>
 </p>
 
----
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5846e3cd-3af6-4e10-a30f-70353d6c86e6/deploy-status)](https://app.netlify.com/sites/speakout/deploys)
-[![Netlify Link](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](https://speakout.netlify.app)
-[![Domain Link](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](https://speakout.akshatvg.com)
+![Generic badge](https://img.shields.io/badge/timemator-clone-orange) 
 
+#### Link for [demo](https://speakout.akshatvg.com) 
+[![Generic badge](https://img.shields.io/badge/view-demo-orange)](https://speakout.akshatvg.com)
 
-## Instructions to run
+## Useful Links
 
-* Pre-requisites:
-	-  [x] Agora RTC SDK
+- [Agora.io Website](https://www.agora.io)
+
+## Requirements
+	-  [x] Agora RTC SDK (or <a href="https://github.com/akshatvg/Agora-RTC-CDN">CDN</a>)
 	-  [x] Agora App ID
 
-* Directions To Install
+## Instructions
+[![chrome](https://img.shields.io/badge/Open-index.html-lightgrey.svg?logo=google-chrome&style=popout&logoColor=red)](https://speakout.akshatvg.com)
+
+Extract the folder and run `index.html`
+
+
+## Need help?
+
+Feel free to contact me via [Facebook](https://www.facebook.com/akshatvg).
+
+Invite me to connect on [LinkedIn](https://www.linkedin.com/in/akshatvg/).
+
+[![Facebook](https://img.shields.io/badge/Facebook-add-blue.svg?logo=facebook&logoColor=white)](https://www.facebook.com/akshatvg) [![Quora](https://img.shields.io/badge/Quora-ask-red.svg?logo=quora)](https://www.quora.com/profile/Akshat-Gupta-279) [![Instagram](https://img.shields.io/badge/Instagram-follow-purple.svg?logo=instagram&logoColor=white)](https://www.instagram.com/akshatvg/) [![GitHub](https://img.shields.io/badge/Snapchat-add-yellow.svg?logo=snapchat&logoColor=white)](https://www.snapchat.com/add/akshatvg) [![Medium](https://img.shields.io/badge/Medium-follow-black.svg?logo=medium&logoColor=white)](https://medium.com/@akshatvg)
+
+
 ```bash
-$ git clone https://github.com/akshatvg/speakOut
-$ cd speakOut
+
+
+
+ _____ _                 _     __   __            
+|_   _| |               | |    \ \ / /            
+  | | | |__   __ _ _ __ | | __  \ V /___  _   _   
+  | | | '_ \ / _` | '_ \| |/ /   \ // _ \| | | |  
+  | | | | | | (_| | | | |   <    | | (_) | |_| |  
+  \_/ |_| |_|\__,_|_| |_|_|\_\   \_/\___/ \__,_|  
+                                                  
+                                                  
+______                                            
+|  ___|                                           
+| |_ ___  _ __                                    
+|  _/ _ \| '__|                                   
+| || (_) | |                                      
+\_| \___/|_|                                      
+                                                  
+                                                  
+______      _               _   _               _ 
+| ___ \    (_)             | | | |             | |
+| |_/ / ___ _ _ __   __ _  | |_| | ___ _ __ ___| |
+| ___ \/ _ \ | '_ \ / _` | |  _  |/ _ \ '__/ _ \ |
+| |_/ /  __/ | | | | (_| | | | | |  __/ | |  __/_|
+\____/ \___|_|_| |_|\__, | \_| |_/\___|_|  \___(_)
+                     __/ |                        
+                    |___/                         
+
+ 
+
+
 ```
 
-## Contributors
+## License
 
-* [Akshat Gupta](https://www.akshatvg.com)
+**MIT &copy; [Akshat Gupta](https://github.com/akshatvg/speakOut/blob/master/LICENSE)**
 
-## Future Scope
-- Add Web RTM
+[![GitHub license](https://img.shields.io/github/license/akshatvg/speakOut?style=social&logo=github)](https://github.com/akshatvg/speakOut/blob/master/LICENSE) [![Twitter Follow](https://img.shields.io/twitter/follow/akshatvg?style=social)](https://twitter.com/akshatvg)
 
-<br>
-<br>
+---------
 
-<p align="center">
-	Made with :heart: by Akshat Gupta
-</p>
+```javascript
 
+if (youEnjoyed) {
+    starThisRepository();
+}
+
+```
+
+-----------
