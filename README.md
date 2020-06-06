@@ -10,7 +10,7 @@ Conduct meetings, project reviews & informal hangout sessions using speakOut- th
 </a>
 </p>
 
-![Generic badge](https://img.shields.io/badge/timemator-clone-orange) 
+![Generic badge](https://img.shields.io/badge/speakOut-With_Agora-orange) 
 
 #### Link for [demo](https://speakout.akshatvg.com) 
 [![Generic badge](https://img.shields.io/badge/view-demo-orange)](https://speakout.akshatvg.com)
@@ -20,8 +20,8 @@ Conduct meetings, project reviews & informal hangout sessions using speakOut- th
 - [Agora.io Website](https://www.agora.io)
 
 ## Requirements
-	-  [x] Agora RTC SDK (or <a href="https://github.com/akshatvg/Agora-RTC-CDN">CDN</a>)
-	-  [x] Agora App ID
+-  [x] Agora RTC SDK (or <a href="https://github.com/akshatvg/Agora-RTC-CDN">CDN</a>)
+-  [x] Agora App ID
 
 ## Instructions
 [![chrome](https://img.shields.io/badge/Open-index.html-lightgrey.svg?logo=google-chrome&style=popout&logoColor=red)](https://speakout.akshatvg.com)
@@ -74,7 +74,7 @@ ______      _               _   _               _
 
 ## License
 
-**MIT &copy; [Akshat Gupta](https://github.com/akshatvg/speakOut/blob/master/LICENSE)**
+**GPL-3.0 &copy; [Akshat Gupta](https://github.com/akshatvg/speakOut/blob/master/LICENSE)**
 
 [![GitHub license](https://img.shields.io/github/license/akshatvg/speakOut?style=social&logo=github)](https://github.com/akshatvg/speakOut/blob/master/LICENSE) [![Twitter Follow](https://img.shields.io/twitter/follow/akshatvg?style=social)](https://twitter.com/akshatvg)
 
