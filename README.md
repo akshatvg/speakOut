@@ -6,7 +6,7 @@ Conduct meetings, project reviews & informal hangout sessions using speakOut- th
 
 <p align="center">
 <a href="https://speakout.akshatvg.com">
-<img src="https://github.com/akshatvg/speakOut/blob/master/assets/img/logo.png" width="120px" height="120px" alt="speakOut Logo"/>
+<img src="https://github.com/akshatvg/speakOut/blob/master/assets/img/logo.png" width="200px" height="200px" alt="speakOut Logo"/>
 </a>
 </p>
 
