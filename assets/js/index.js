@@ -1,5 +1,5 @@
 
-// join channel modal
+// Join VC Channel
 $("#join-channel").click(function (event) {
     var agoraAppId = "a6af85f840ef43108491705e2315a857";
     var channelName = $('#form-channel').val();
@@ -7,22 +7,18 @@ $("#join-channel").click(function (event) {
     $("#modalForm").modal("hide");
 });
 
-// UI buttons
+// VC Button Controls
 function enableUiControls(localStream) {
-
     $("#mic-btn").prop("disabled", false);
     $("#video-btn").prop("disabled", false);
     $("#screen-share-btn").prop("disabled", false);
     $("#exit-btn").prop("disabled", false);
-
     $("#mic-btn").click(function () {
         toggleMic(localStream);
     });
-
     $("#video-btn").click(function () {
         toggleVideo(localStream);
     });
-
     $("#screen-share-btn").click(function () {
         toggleScreenShareBtn(); // set screen share button icon
         $("#screen-share-btn").prop("disabled", true); // disable the button on click
@@ -113,3 +109,8 @@ function toggleVideo(localStream) {
         toggleVisibility("#no-local-video", true); // show the user icon when video is disabled
     }
 }
+
+// Channel Join Modal
+$(document).ready(function () {
+    $("#modalForm").modal("show");
+});

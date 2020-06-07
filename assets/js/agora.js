@@ -3,6 +3,8 @@
  */
 
 // video profile settings
+var agoraAppId = "a6af85f840ef43108491705e2315a857";
+var channelName = $('#form-channel').val();
 var cameraVideoProfile = '480p_4'; // 640 × 480 @ 30fps  & 750kbs
 var screenVideoProfile = '480p_2'; // 640 × 480 @ 30fps
 
@@ -286,11 +288,5 @@ function leaveChannel() {
         // show the modal overlay to join
         $("#modalForm").modal("show");
     }, function (err) {
-        console.log("client leave failed ", err); //error handling
     });
-}
-
-// use tokens for added security
-function generateToken() {
-    return null; // TODO: add a token generation
 }
