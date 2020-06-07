@@ -60,8 +60,8 @@
 
 <body>
 
-    <header id="navs">
-        <!-- Top Nav -->
+    <!-- Top Nav -->
+    <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo pl-md-5">speakOut</a>
@@ -74,18 +74,18 @@
                 <a href="#" data-target="slide-out" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
             </div>
         </nav>
-    </header>
+    </div>
 
     <!-- Sidenav -->
     <ul id="slide-out" class="sidenav">
         <a href="/" class="center-align">
-            <li class="mt-5">
+            <li class="mt-3">
                 <img alt="speakOut" src="assets/img/logo.png" class="responsive-img" width="120px">
             </li>
         </a>
-        <li><a class="waves-effect black-text" href="/">Home</a></li>
+        <li class="mt-3"><a class="waves-effect grey lighten-4" href="/" id="activeSide">Home</a></li>
         <li><a class="waves-effect black-text" href="/groupVC">Group Video Call</a></li>
-        <li><a class="waves-effect black-text" href="/goLive">Go Live</a></li>
+        <li><a class="waves-effect black-text grey lighten-4" href="/goLive">Go Live</a></li>
         <li><a class="waves-effect black-text" href="/joinLivestream">Join Livestream</a></li>
     </ul>
 
@@ -122,6 +122,76 @@
                 </div>
             </div>
         </div>
+        <!-- Features -->
+        <section class="p-3">
+            <div class="container mt-4">
+                <div class="row center">
+                    <h4 class="mt-2 mb-4">One Portal, Many Features</h4>
+                </div>
+                <div class="row center mt-5">
+                    <div class="col s6 m3">
+                        <i class="material-icons large teal-text text-darken-1">group</i>
+                        <p class=" blue-grey-text text-darken-4 bolder">Meetings</p>
+                    </div>
+                    <div class="col s6 m3">
+                        <i class="material-icons large teal-text text-lighten-3">ondemand_video</i>
+                        <p class=" blue-grey-text text-darken-4 bolder">Video Webinars</p>
+                    </div>
+                    <div class="col s6 m3">
+                        <i class="material-icons large light-blue-text text-darken-4">group_work</i>
+                        <p class=" blue-grey-text text-darken-4 bolder">Conference Rooms</p>
+                    </div>
+                    <div class="col s6 m3">
+                        <i class="material-icons large light-blue-text text-lighten-3">important_devices</i>
+                        <p class=" blue-grey-text text-darken-4 bolder">Livestreams</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Why speakOut -->
+        <section class="grey lighten-5 p-3 mb-5">
+            <div class="container mt-4 mb-5">
+                <div class="row center">
+                    <h4 class="mt-2 mb-4">Why use speakOut?</h4>
+                </div>
+                <div class="row center mt-5">
+                    <div class="col s6 m3">
+                        <i class="material-icons medium indigo-text text-darken-1">looks_one</i>
+                        <p class="blue-grey-text text-darken-4">One consistent enterprise for all use cases</p>
+                    </div>
+                    <div class="col s6 m3">
+                        <i class="material-icons medium indigo-text text-darken-1">security</i>
+                        <p class="blue-grey-text text-darken-4">Engineered & optimized to work reliably</p>
+                    </div>
+                    <div class="col s6 m3">
+                        <i class="material-icons medium indigo-text text-darken-1">thumb_up</i>
+                        <p class="blue-grey-text text-darken-4">Easy-to-use and understand</p>
+                    </div>
+                    <div class="col s6 m3">
+                        <i class="material-icons medium indigo-text text-darken-1">trending_up</i>
+                        <p class="blue-grey-text text-darken-4">Multiple video participants & viewers</p>
+                    </div>
+                </div>
+                <div class="row center mt-n3">
+                    <div class="col s6 m3">
+                        <i class="material-icons medium indigo-text text-darken-1">chat_bubble</i>
+                        <p class="blue-grey-text text-darken-4">Live chat support</p>
+                    </div>
+                    <div class="col s6 m3">
+                        <i class="material-icons medium indigo-text text-darken-1">monetization_on</i>
+                        <p class="blue-grey-text text-darken-4">Free to use with no hidden costs</p>
+                    </div>
+                    <div class="col s6 m3">
+                        <i class="material-icons medium indigo-text text-darken-1">file_download</i>
+                        <p class="blue-grey-text text-darken-4">No need for any download</p>
+                    </div>
+                    <div class="col s6 m3">
+                        <i class="material-icons medium indigo-text text-darken-1">public</i>
+                        <p class="blue-grey-text text-darken-4">Connect with anyone, anywhere</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Loader -->
@@ -140,6 +210,19 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <script src="assets/js/index.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Tawk.to Script -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5edcc2eb9e5f694422900ed9/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
 
 </body>
 

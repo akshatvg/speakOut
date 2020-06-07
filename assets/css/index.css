@@ -179,15 +179,15 @@ button:focus {
 }
 
 /* Active Sidebar */
-#active {
+#activeSide {
     color: #2F3FB0;
 }
 
-#active-icon {
-    color: #2F3FB0;
+.sidenav {
+    border-right: 15px solid #2F3FB0;
 }
 
-#active::after {
+#activeSide::after {
     content: "";
     position: absolute;
     right: 0;
@@ -324,4 +324,9 @@ i#prev {
     max-width: 350px;
     min-height: 45px;
     max-height: 55px;
+}
+
+/* Text Colored */
+.text-colored {
+    color: #2F3FB0;
 }
