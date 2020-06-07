@@ -314,6 +314,11 @@ i#prev {
     cursor: pointer;
 }
 
+/* Border Radius */
+.br-10 {
+    border-radius: 10px;
+}
+
 /* Button(s): speakOut */
 .btn-speakout,
 .btn-speakout:hover {
@@ -324,6 +329,14 @@ i#prev {
     max-width: 350px;
     min-height: 45px;
     max-height: 55px;
+}
+
+.btn-actions-vc,
+.btn-actions-vc:hover,
+.btn-actions-vc:focus {
+    background-color: rgba(0, 0, 0, 0.548);
+    color: white;
+    border-radius: 10px;
 }
 
 /* Text Colored */
@@ -342,17 +355,25 @@ i#prev {
     color: white;
 }
 
-/* Video Call */
-#buttons-container {
-    position: absolute;
-    z-index: 2;
-    width: 100vw;
+/* Displays */
+.d-none {
+    display: none !important;
 }
 
+.d-inline {
+    display: inline-block !important;
+}
+
+/* VC Channel Modal */
+#modalForm {
+    transform: translateY(20%) scaleX(1) !important;
+}
+
+/* Video Call */
 #full-screen-video {
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 85vh;
 }
 
 #lower-video-bar {
@@ -424,6 +445,6 @@ i#prev {
     width: 80%;
 }
 
-#screen-share-btn-container {
-    z-index: 99;
+#main-container{
+    overflow: hidden;
 }

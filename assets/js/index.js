@@ -4,7 +4,7 @@ $("#join-channel").click(function (event) {
     var agoraAppId = "a6af85f840ef43108491705e2315a857";
     var channelName = $('#form-channel').val();
     initClientAndJoinChannel(agoraAppId, channelName);
-    $("#modalForm").modal("hide");
+    $('#modalForm').modal('close');
 });
 
 // VC Button Controls
@@ -110,7 +110,14 @@ function toggleVideo(localStream) {
     }
 }
 
-// Channel Join Modal
-$(document).ready(function () {
-    $("#modalForm").modal("show");
-});
+function disableChannelBtn() {
+    $('#join-channel').attr('disabled', true);
+    $('#form-channel').attr('disabled', true);
+    $("#join-channel").html("Channel Already Chosen");
+}
+
+function enableChannelBtn() {
+    $('#join-channel').attr('disabled', false);
+    $('#form-channel').attr('disabled', false);
+    $("#join-channel").html("Join Channel");
+}

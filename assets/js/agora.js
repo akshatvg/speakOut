@@ -286,7 +286,13 @@ function leaveChannel() {
         toggleVisibility("#mute-overlay", false);
         toggleVisibility("#no-local-video", false);
         // show the modal overlay to join
-        $("#modalForm").modal("show");
+        $('#modalForm').modal('open');
     }, function (err) {
+        console.log("client leave failed ", err); //error handling
     });
+}
+
+// use tokens for added security
+function generateToken() {
+    return null; // TODO: add a token generation
 }
