@@ -2,7 +2,7 @@
 
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/akshatvg/speakOut?logo=github&style=social)](https://github.com/akshatvg/) [![GitHub last commit](https://img.shields.io/github/last-commit/akshatvg/speakOut?style=social&logo=git)](https://github.com/akshatvg/) [![GitHub stars](https://img.shields.io/github/stars/akshatvg/speakOut?style=social)](https://github.com/akshatvg/speakOut/stargazers) [![GitHub forks](https://img.shields.io/github/forks/akshatvg/speakOut?style=social&logo=git)](https://github.com/akshatvg/speakOut/network) [![Netlify Status](https://api.netlify.com/api/v1/badges/5846e3cd-3af6-4e10-a30f-70353d6c86e6/deploy-status)](https://app.netlify.com/sites/speakout/deploys)
 
-Conduct meetings, project reviews & informal hangout sessions using speakOut- the most secure application in today's market in high definition real time video and audio.
+Conduct meetings, livestreams, project reviews & informal hangout sessions using speakOut- the most secure application in today's market in high definition real time video and audio.
 
 <p align="center">
 <a href="https://speakout.akshatvg.com">

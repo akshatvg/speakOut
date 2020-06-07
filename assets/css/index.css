@@ -330,3 +330,9 @@ i#prev {
 .text-colored {
     color: #2F3FB0;
 }
+
+/* Footer */
+.page-footer {
+    background: #2F3FB0;
+    color: white;
+}
