@@ -1,24 +1,27 @@
-
-// Join VC Channel
+// join channel modal
 $("#join-channel").click(function (event) {
     var agoraAppId = "a6af85f840ef43108491705e2315a857";
     var channelName = $('#form-channel').val();
     initClientAndJoinChannel(agoraAppId, channelName);
-    $('#modalForm').modal('close');
+    $("#modalForm").modal("hide");
 });
 
-// VC Button Controls
+// UI buttons
 function enableUiControls(localStream) {
+
     $("#mic-btn").prop("disabled", false);
     $("#video-btn").prop("disabled", false);
     $("#screen-share-btn").prop("disabled", false);
     $("#exit-btn").prop("disabled", false);
+
     $("#mic-btn").click(function () {
         toggleMic(localStream);
     });
+
     $("#video-btn").click(function () {
         toggleVideo(localStream);
     });
+
     $("#screen-share-btn").click(function () {
         toggleScreenShareBtn(); // set screen share button icon
         $("#screen-share-btn").prop("disabled", true); // disable the button on click
@@ -110,14 +113,37 @@ function toggleVideo(localStream) {
     }
 }
 
+// Disable Channel Btn
 function disableChannelBtn() {
     $('#join-channel').attr('disabled', true);
     $('#form-channel').attr('disabled', true);
     $("#join-channel").html("Channel Already Chosen");
 }
 
+// Enable Channel Btn
 function enableChannelBtn() {
     $('#join-channel').attr('disabled', false);
     $('#form-channel').attr('disabled', false);
     $("#join-channel").html("Join Channel");
 }
+
+// Channel Join Modal
+$(document).ready(function () {
+    $('#modalForm').modal();
+    $("#modalForm").modal("show");
+});
+
+// Keypress
+$(document).keypress(function (event) {
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if (keycode == '13') {
+        $("#join-channel").trigger('click');
+    }
+});
+
+// Remove default video style tag
+$(document).ready(function () {
+    $('video').removeAttr('style');
+    $("video").css("style", "");
+});
+

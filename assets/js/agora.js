@@ -2,9 +2,10 @@
  * JS Interface for Agora.io SDK
  */
 
-// video profile settings
 var agoraAppId = "a6af85f840ef43108491705e2315a857";
 var channelName = $('#form-channel').val();
+
+// video profile settings
 var cameraVideoProfile = '480p_4'; // 640 × 480 @ 30fps  & 750kbs
 var screenVideoProfile = '480p_2'; // 640 × 480 @ 30fps
 
@@ -286,7 +287,7 @@ function leaveChannel() {
         toggleVisibility("#mute-overlay", false);
         toggleVisibility("#no-local-video", false);
         // show the modal overlay to join
-        $('#modalForm').modal('open');
+        $("#modalForm").modal("show");
     }, function (err) {
         console.log("client leave failed ", err); //error handling
     });
