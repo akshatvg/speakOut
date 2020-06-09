@@ -57,7 +57,6 @@
 <body>
 
     <!-- Top Nav -->
-
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <a class="navbar-brand mt-n1 pl-md-5" href="/">speakOut</a>
         <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
@@ -67,11 +66,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="/">Home</a></li>
-                <li class="nav-item"><a href="/groupVC">Group Video Call</a></li>
-                <li class="nav-item"><a href="/goLive">Go Live</a></li>
-                <li class="nav-item"><a href="/joinLivestream">Join Livestream</a></li>
-                <li class="nav-item"><a class="model-trigger" id="disableChannel" href="#!"
+                <li class="nav-item active text-center"><a href="/">Home</a></li>
+                <li class="nav-item text-center"><a href="/groupVC">Group Video Call</a></li>
+                <li class="nav-item text-center"><a href="/goLive">Go Live</a></li>
+                <li class="nav-item text-center"><a href="/joinLivestream">Join Livestream</a></li>
+                <li class="nav-item text-center"><a class="model-trigger" id="disableChannel" href="#!"
                         onclick="$('#modalForm').modal('show');">Select
                         Channel</a></li>
             </ul>
@@ -80,18 +79,18 @@
 
     <div class="container-fluid p-0">
         <div id="main-container">
-            <div id="buttons-container" class="row justify-content-center mb-3">
-                <div class="col-3 text-center">
+            <div id="buttons-container" class="row justify-content-center mt-2">
+                <div class="col-4 col-md-3 text-center">
                     <button id="mic-btn" type="button" class="btn btn-actions-vc">
                         <i id="mic-icon" class="fas fa-microphone"></i>
                     </button>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col-4 col-md-3 text-center">
                     <button id="video-btn" type="button" class="btn btn-actions-vc">
                         <i id="video-icon" class="fas fa-video"></i>
                     </button>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col-4 col-md-3 text-center">
                     <button id="exit-btn" type="button" class="btn btn-actions-vc-danger">
                         <i id="exit-icon" class="fas fa-phone-slash"></i>
                     </button>
@@ -99,26 +98,27 @@
             </div>
             <div id="full-screen-video"></div>
             <div id="lower-video-bar" class="row fixed-bottom mb-1">
-                <div id="remote-streams-container" class="container col-9 ml-1">
+                <div id="remote-streams-container" class="col-12 col-md-9">
                     <div id="remote-streams" class="row">
-                        <!-- insert remote streams dynamically -->
+                        <!-- Dynamic Others Videos -->
                     </div>
                 </div>
-                <div id="local-stream-container" class="col p-0">
+                <!-- Self Video -->
+                <div id="local-stream-container" class="col-12 col-md-2">
                     <div id="mute-overlay" class="col">
                         <i id="mic-icon" class="fas fa-microphone-slash"></i>
                     </div>
                     <div id="no-local-video" class="col text-center">
                         <i id="user-icon" class="fas fa-user"></i>
                     </div>
-                    <div id="local-video" class="col-12 col-md-4 p-0"></div>
+                    <div id="local-video" class="col p-0"></div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="modalForm">
-        <div class="modal-dialog">
+        <div class="modal-dialog modaL-sm">
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <h4 class="modal-title w-100 font-weight-bold text-left">Join A Meeting</h4>
@@ -154,14 +154,5 @@
 <script src="https://cdn-agora.akshatvg.com/sdk-3.1.1.js"></script>
 <script src="assets/js/index.js"></script>
 <script src="assets/js/agora.js"></script>
-<script>
-    $("#mic-btn").prop("disabled", true);
-    $("#video-btn").prop("disabled", true);
-    $("#exit-btn").prop("disabled", true);
-
-    $(document).ready(function () {
-        $("#modalForm").modal("show");
-    });
-</script>
 
 </html>

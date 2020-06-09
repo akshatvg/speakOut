@@ -120,7 +120,7 @@ function createCameraStream(uid) {
 function addRemoteStreamMiniView(remoteStream) {
     var streamId = remoteStream.getId();
     $('#remote-streams').append(
-        $('<div/>', { 'id': streamId + '_container', 'class': 'remote-stream-container col' }).append(
+        $('<div/>', { 'id': streamId + '_container', 'class': 'remote-stream-container' }).append(
             $('<div/>', { 'id': streamId + '_mute', 'class': 'mute-overlay' }).append(
                 $('<i/>', { 'class': 'fas fa-microphone-slash' })
             ),

@@ -110,4 +110,13 @@ $(document).ready(function () {
     $("video").css("style", "");
 });
 
+// Disable Btns
+$("#mic-btn").prop("disabled", true);
+$("#video-btn").prop("disabled", true);
+$("#exit-btn").prop("disabled", true);
+// Show Form on Page Load
+$(document).ready(function () {
+    $("#modalForm").modal("show");
+});
+
 console.clear();
