@@ -293,7 +293,7 @@ function leaveChannel() {
     });
 }
 
-// use tokens for added security
+// Generate Token
 function generateToken() {
-    return null; // TODO: add a token generation
+    return null; 
 }

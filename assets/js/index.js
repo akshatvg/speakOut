@@ -1,4 +1,4 @@
-// join channel modal
+// Join Channel Modal
 $("#join-channel").click(function (event) {
     var agoraAppId = "a6af85f840ef43108491705e2315a857";
     var channelName = $('#form-channel').val();
@@ -6,81 +6,42 @@ $("#join-channel").click(function (event) {
     $("#modalForm").modal("hide");
 });
 
-// UI buttons
+// Enable After Join
 function enableUiControls(localStream) {
-
     $("#mic-btn").prop("disabled", false);
     $("#video-btn").prop("disabled", false);
-    $("#screen-share-btn").prop("disabled", false);
     $("#exit-btn").prop("disabled", false);
-
     $("#mic-btn").click(function () {
         toggleMic(localStream);
     });
-
     $("#video-btn").click(function () {
         toggleVideo(localStream);
     });
-
-    $("#screen-share-btn").click(function () {
-        toggleScreenShareBtn(); // set screen share button icon
-        $("#screen-share-btn").prop("disabled", true); // disable the button on click
-        if (screenShareActive) {
-            stopScreenShare();
-        } else {
-            initScreenShare();
-        }
-    });
-
     $("#exit-btn").click(function () {
-        console.log("so sad to see you leave the channel");
         leaveChannel();
     });
 
-    // keyboard listeners 
+    // Shortcuts
     $(document).keypress(function (e) {
         switch (e.key) {
             case "m":
-                console.log("squick toggle the mic");
                 toggleMic(localStream);
                 break;
             case "v":
-                console.log("quick toggle the video");
                 toggleVideo(localStream);
                 break;
-            case "s":
-                console.log("initializing screen share");
-                toggleScreenShareBtn(); // set screen share button icon
-                $("#screen-share-btn").prop("disabled", true); // disable the button on click
-                if (screenShareActive) {
-                    stopScreenShare();
-                } else {
-                    initScreenShare();
-                }
-                break;
             case "q":
-                console.log("so sad to see you quit the channel");
                 leaveChannel();
                 break;
-            default:  // do nothing
-        }
-
-        // (for testing) 
-        if (e.key === "r") {
-            window.history.back(); // quick reset
+            default:
         }
     });
 }
 
+// Toggle
 function toggleBtn(btn) {
     btn.toggleClass('btn-dark').toggleClass('btn-danger');
 }
-
-function toggleScreenShareBtn() {
-    $('#screen-share-btn').toggleClass('btn-danger');
-    $('#screen-share-icon').toggleClass('fa-share-square').toggleClass('fa-times-circle');
-}
-
 function toggleVisibility(elementID, visible) {
     if (visible) {
         $(elementID).attr("style", "display:block");
@@ -89,27 +50,29 @@ function toggleVisibility(elementID, visible) {
     }
 }
 
+// Toggle Audio
 function toggleMic(localStream) {
-    toggleBtn($("#mic-btn")); // toggle button colors
-    $("#mic-icon").toggleClass('fa-microphone').toggleClass('fa-microphone-slash'); // toggle the mic icon
+    toggleBtn($("#mic-btn"));
+    $("#mic-icon").toggleClass('fa-microphone').toggleClass('fa-microphone-slash');
     if ($("#mic-icon").hasClass('fa-microphone')) {
-        localStream.unmuteAudio(); // enable the local mic
-        toggleVisibility("#mute-overlay", false); // hide the muted mic icon
+        localStream.unmuteAudio();
+        toggleVisibility("#mute-overlay", false);
     } else {
-        localStream.muteAudio(); // mute the local mic
-        toggleVisibility("#mute-overlay", true); // show the muted mic icon
+        localStream.muteAudio();
+        toggleVisibility("#mute-overlay", true);
     }
 }
 
+// Tooggle Video
 function toggleVideo(localStream) {
-    toggleBtn($("#video-btn")); // toggle button colors
-    $("#video-icon").toggleClass('fa-video').toggleClass('fa-video-slash'); // toggle the video icon
+    toggleBtn($("#video-btn"));
+    $("#video-icon").toggleClass('fa-video').toggleClass('fa-video-slash');
     if ($("#video-icon").hasClass('fa-video')) {
-        localStream.unmuteVideo(); // enable the local video
-        toggleVisibility("#no-local-video", false); // hide the user icon when video is enabled
+        localStream.unmuteVideo();
+        toggleVisibility("#no-local-video", false);
     } else {
-        localStream.muteVideo(); // disable the local video
-        toggleVisibility("#no-local-video", true); // show the user icon when video is disabled
+        localStream.muteVideo();
+        toggleVisibility("#no-local-video", true);
     }
 }
 
@@ -133,7 +96,7 @@ $(document).ready(function () {
     $("#modalForm").modal("show");
 });
 
-// Keypress
+// Keypress Join Channel
 $(document).keypress(function (event) {
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if (keycode == '13') {
