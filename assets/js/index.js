@@ -110,3 +110,4 @@ $(document).ready(function () {
     $("video").css("style", "");
 });
 
+console.clear();
