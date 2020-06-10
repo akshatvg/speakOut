@@ -40,21 +40,39 @@
 	<link rel="canonical" href="https://speakout.akshatvg.com/groupVC">
 
 	<!-- Title -->
-	<title>Video Call || speakOut</title>
+	<title>Go Live || speakOut</title>
 
 	<!-- Linking Favicon, Apple Touch Icon, Font Awesome, AOS, Bootstrap & CSS -->
 	<link rel="icon" href="assets/img/favicon.png">
 	<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/livestream.css">
 </head>
 
 <body>
+
+	<!-- Top Nav -->
+	<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+		<a class="navbar-brand mt-n1 pl-md-5" href="/">speakOut</a>
+		<button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active text-center"><a href="/">Home</a></li>
+				<li class="nav-item text-center"><a href="/groupVC">Group Video Call</a></li>
+				<li class="nav-item text-center"><a href="/goLive">Go Live</a></li>
+				<li class="nav-item text-center"><a href="/joinLivestream">Join Livestream</a></li>
+			</ul>
+		</div>
+	</nav>
 
 	<div class="container-fluid p-0">
 		<div id="main-container">
@@ -87,14 +105,29 @@
 					</button>
 				</div>
 			</div>
+			<!-- Full Screen Video -->
 			<div id="full-screen-video"></div>
 		</div>
 	</div>
+
+	<!-- Toast -->
+	<div class="toast">
+		<div class="toast-header">
+			Leaving Livestream
+		</div>
+		<div class="toast-body">
+			Hope you enjoyed. See you again soon!
+		</div>
+	</div>
+
 </body>
-<script>
-</script>
+
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
 	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"

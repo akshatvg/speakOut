@@ -6,7 +6,7 @@ var agoraAppId = 'a6af85f840ef43108491705e2315a857'; // set app id
 var channelName = 'AgoraBroadcastDemo'; // set channel name
 
 // create client instance
-var client = AgoraRTC.createClient({mode: 'live', codec: 'vp8'}); // h264 better detail at a higher motion
+var client = AgoraRTC.createClient({ mode: 'live', codec: 'vp8' }); // h264 better detail at a higher motion
 var mainStreamId; // reference to main stream
 
 // set video profile 
@@ -53,7 +53,7 @@ var defaultConfigRTMP = {
 // set log level:
 // -- .DEBUG for dev 
 // -- .NONE for prod
-AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.DEBUG); 
+AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.DEBUG);
 
 // init Agora SDK
 client.init(agoraAppId, function () {
@@ -83,7 +83,7 @@ client.on('stream-subscribed', function (evt) {
   var remoteStream = evt.stream;
   var remoteId = remoteStream.getId();
   console.log("Subscribe remote stream successfully: " + remoteId);
-  if( $('#full-screen-video').is(':empty') ) { 
+  if ($('#full-screen-video').is(':empty')) {
     mainStreamId = remoteId;
     remoteStream.play('full-screen-video');
   } else {
@@ -101,11 +101,11 @@ client.on('stream-removed', function (evt) {
 //live transcoding events..
 client.on('liveStreamingStarted', function (evt) {
   console.log("Live streaming started");
-}); 
+});
 
 client.on('liveStreamingFailed', function (evt) {
   console.log("Live streaming failed");
-}); 
+});
 
 client.on('liveStreamingStopped', function (evt) {
   console.log("Live streaming stopped");
@@ -113,16 +113,16 @@ client.on('liveStreamingStopped', function (evt) {
 
 client.on('liveTranscodingUpdated', function (evt) {
   console.log("Live streaming updated");
-}); 
+});
 
 // ingested live stream 
 client.on('streamInjectedStatus', function (evt) {
   console.log("Injected Steram Status Updated");
   console.log(JSON.stringify(evt));
-}); 
+});
 
 // when a remote stream leaves the channel
-client.on('peer-leave', function(evt) {
+client.on('peer-leave', function (evt) {
   console.log('Remote stream has left the channel: ' + evt.stream.getId());
 });
 
@@ -150,19 +150,19 @@ function joinChannel() {
   var userID = 0; // set to null to auto generate uid on successfull connection
 
   // set the role
-  client.setClientRole('host', function() {
+  client.setClientRole('host', function () {
     console.log('Client role set as host.');
-  }, function(e) {
+  }, function (e) {
     console.log('setClientRole failed', e);
   });
-  
+
   // client.join(token, 'allThingsRTCLiveStream', 0, function(uid) {
-  client.join(token, channelName, userID, function(uid) {
-      createCameraStream(uid, {});
-      localStreams.uid = uid; // keep track of the stream uid  
-      console.log('User ' + uid + ' joined channel successfully');
-  }, function(err) {
-      console.log('[ERROR] : join channel failed', err);
+  client.join(token, channelName, userID, function (uid) {
+    createCameraStream(uid, {});
+    localStreams.uid = uid; // keep track of the stream uid  
+    console.log('User ' + uid + ' joined channel successfully');
+  }, function (err) {
+    console.log('[ERROR] : join channel failed', err);
   });
 }
 
@@ -179,8 +179,8 @@ function createCameraStream(uid, deviceIds) {
   localStream.setVideoProfile(cameraVideoProfile);
 
   // The user has granted access to the camera and mic.
-  localStream.on("accessAllowed", function() {
-    if(devices.cameras.length === 0 && devices.mics.length === 0) {
+  localStream.on("accessAllowed", function () {
+    if (devices.cameras.length === 0 && devices.mics.length === 0) {
       console.log('[DEBUG] : checking for cameras & mics');
       getCameraDevices();
       getMicDevices();
@@ -188,16 +188,16 @@ function createCameraStream(uid, deviceIds) {
     console.log("accessAllowed");
   });
   // The user has denied access to the camera and mic.
-  localStream.on("accessDenied", function() {
+  localStream.on("accessDenied", function () {
     console.log("accessDenied");
   });
 
-  localStream.init(function() {
+  localStream.init(function () {
     console.log('getUserMedia successfully');
     localStream.play('full-screen-video'); // play the local stream on the main div
     // publish local stream
 
-    if($.isEmptyObject(localStreams.camera.stream)) {
+    if ($.isEmptyObject(localStreams.camera.stream)) {
       enableUiControls(localStream); // move after testing
     } else {
       //reset controls
@@ -217,8 +217,7 @@ function createCameraStream(uid, deviceIds) {
 }
 
 function leaveChannel() {
-
-  client.leave(function() {
+  client.leave(function () {
     console.log('client leaves channel');
     localStreams.camera.stream.stop() // stop the camera stream playback
     localStreams.camera.stream.close(); // clean up and close the camera stream
@@ -227,9 +226,8 @@ function leaveChannel() {
     $('#mic-btn').prop('disabled', true);
     $('#video-btn').prop('disabled', true);
     $('#exit-btn').prop('disabled', true);
-    $("#add-rtmp-btn").prop("disabled", true);
-    $("#rtmp-config-btn").prop("disabled", true);
-  }, function(err) {
+    window.location.replace("/");
+  }, function (err) {
     console.log('client leave failed ', err); //error handling
   });
 }
@@ -239,30 +237,30 @@ function generateToken() {
   return null; // TODO: add a token generation
 }
 
-function changeStreamSource (deviceIndex, deviceType) {
+function changeStreamSource(deviceIndex, deviceType) {
   console.log('Switching stream sources for: ' + deviceType);
   var deviceId;
   var existingStream = false;
-  
+
   if (deviceType === "video") {
     deviceId = devices.cameras[deviceIndex].deviceId
   }
 
-  if(deviceType === "audio") {
+  if (deviceType === "audio") {
     deviceId = devices.mics[deviceIndex].deviceId;
   }
 
-  localStreams.camera.stream.switchDevice(deviceType, deviceId, function(){
+  localStreams.camera.stream.switchDevice(deviceType, deviceId, function () {
     console.log('successfully switched to new device with id: ' + JSON.stringify(deviceId));
     // set the active device ids
-    if(deviceType === "audio") {
+    if (deviceType === "audio") {
       localStreams.camera.micId = deviceId;
     } else if (deviceType === "video") {
       localStreams.camera.camId = deviceId;
     } else {
       console.log("unable to determine deviceType: " + deviceType);
     }
-  }, function(){
+  }, function () {
     console.log('failed to switch to new device with id: ' + JSON.stringify(deviceId));
   });
 }
@@ -270,49 +268,49 @@ function changeStreamSource (deviceIndex, deviceType) {
 // helper methods
 function getCameraDevices() {
   console.log("Checking for Camera Devices.....")
-  client.getCameras (function(cameras) {
+  client.getCameras(function (cameras) {
     devices.cameras = cameras; // store cameras array
-    cameras.forEach(function(camera, i){
+    cameras.forEach(function (camera, i) {
       var name = camera.label.split('(')[0];
       var optionId = 'camera_' + i;
       var deviceId = camera.deviceId;
-      if(i === 0 && localStreams.camera.camId === ''){
+      if (i === 0 && localStreams.camera.camId === '') {
         localStreams.camera.camId = deviceId;
       }
       $('#camera-list').append('<a class="dropdown-item" id="' + optionId + '">' + name + '</a>');
     });
-    $('#camera-list a').click(function(event) {
+    $('#camera-list a').click(function (event) {
       var index = event.target.id.split('_')[1];
-      changeStreamSource (index, "video");
+      changeStreamSource(index, "video");
     });
   });
 }
 
 function getMicDevices() {
   console.log("Checking for Mic Devices.....")
-  client.getRecordingDevices(function(mics) {
+  client.getRecordingDevices(function (mics) {
     devices.mics = mics; // store mics array
-    mics.forEach(function(mic, i){
+    mics.forEach(function (mic, i) {
       var name = mic.label.split('(')[0];
       var optionId = 'mic_' + i;
       var deviceId = mic.deviceId;
-      if(i === 0 && localStreams.camera.micId === ''){
+      if (i === 0 && localStreams.camera.micId === '') {
         localStreams.camera.micId = deviceId;
       }
-      if(name.split('Default - ')[1] != undefined) {
+      if (name.split('Default - ')[1] != undefined) {
         name = '[Default Device]' // rename the default mic - only appears on Chrome & Opera
       }
       $('#mic-list').append('<a class="dropdown-item" id="' + optionId + '">' + name + '</a>');
-    }); 
-    $('#mic-list a').click(function(event) {
+    });
+    $('#mic-list a').click(function (event) {
       var index = event.target.id.split('_')[1];
-      changeStreamSource (index, "audio");
+      changeStreamSource(index, "audio");
     });
   });
 }
 
 function startLiveTranscoding() {
-  console.log("start live transcoding"); 
+  console.log("start live transcoding");
   var rtmpUrl = $('#rtmp-url').val();
   var width = parseInt($('#window-scale-width').val(), 10);
   var height = parseInt($('#window-scale-height').val(), 10);
@@ -344,7 +342,7 @@ function startLiveTranscoding() {
 
   // set live transcoding config
   client.setLiveTranscoding(configRtmp);
-  if(rtmpUrl !== '') {
+  if (rtmpUrl !== '') {
     client.startLiveStreaming(rtmpUrl, true)
     externalBroadcastUrl = rtmpUrl;
     addExternalTransmitionMiniView(rtmpUrl)
@@ -374,22 +372,22 @@ function addExternalSource() {
 }
 
 // RTMP Connection (UI Component)
-function addExternalTransmitionMiniView(rtmpUrl){
+function addExternalTransmitionMiniView(rtmpUrl) {
   var container = $('#rtmp-controlers');
   // append the remote stream template to #remote-streams
   container.append(
-    $('<div/>', {'id': 'rtmp-container',  'class': 'container row justify-content-end mb-2'}).append(
-      $('<div/>', {'class': 'pulse-container'}).append(
-          $('<button/>', {'id': 'rtmp-toggle', 'class': 'btn btn-lg col-flex pulse-button pulse-anim mt-2'})
+    $('<div/>', { 'id': 'rtmp-container', 'class': 'container row justify-content-end mb-2' }).append(
+      $('<div/>', { 'class': 'pulse-container' }).append(
+        $('<button/>', { 'id': 'rtmp-toggle', 'class': 'btn btn-lg col-flex pulse-button pulse-anim mt-2' })
       ),
-      $('<input/>', {'id': 'rtmp-url', 'val': rtmpUrl, 'class': 'form-control col-flex" value="rtmps://live.facebook.com', 'type': 'text', 'disabled': true}),
-      $('<button/>', {'id': 'removeRtmpUrl', 'class': 'btn btn-lg col-flex close-btn'}).append(
-        $('<i/>', {'class': 'fas fa-xs fa-trash'})
+      $('<input/>', { 'id': 'rtmp-url', 'val': rtmpUrl, 'class': 'form-control col-flex" value="rtmps://live.facebook.com', 'type': 'text', 'disabled': true }),
+      $('<button/>', { 'id': 'removeRtmpUrl', 'class': 'btn btn-lg col-flex close-btn' }).append(
+        $('<i/>', { 'class': 'fas fa-xs fa-trash' })
       )
     )
   );
-  
-  $('#rtmp-toggle').click(function() {
+
+  $('#rtmp-toggle').click(function () {
     if ($(this).hasClass('pulse-anim')) {
       client.stopLiveStreaming(externalBroadcastUrl)
     } else {
@@ -399,7 +397,7 @@ function addExternalTransmitionMiniView(rtmpUrl){
     $(this).blur();
   });
 
-  $('#removeRtmpUrl').click(function() { 
+  $('#removeRtmpUrl').click(function () {
     client.stopLiveStreaming(externalBroadcastUrl);
     externalBroadcastUrl = '';
     $('#rtmp-container').remove();
@@ -408,24 +406,24 @@ function addExternalTransmitionMiniView(rtmpUrl){
 }
 
 // REMOTE STREAMS UI
-function addRemoteStreamMiniView(remoteStream){
+function addRemoteStreamMiniView(remoteStream) {
   var streamId = remoteStream.getId();
   // append the remote stream template to #remote-streams
   $('#external-broadcasts-container').append(
-    $('<div/>', {'id': streamId + '_container',  'class': 'remote-stream-container col'}).append(
-      $('<div/>', {'id': streamId + '_mute', 'class': 'mute-overlay'}).append(
-          $('<i/>', {'class': 'fas fa-microphone-slash'})
+    $('<div/>', { 'id': streamId + '_container', 'class': 'remote-stream-container col' }).append(
+      $('<div/>', { 'id': streamId + '_mute', 'class': 'mute-overlay' }).append(
+        $('<i/>', { 'class': 'fas fa-microphone-slash' })
       ),
-      $('<div/>', {'id': streamId + '_no-video', 'class': 'no-video-overlay text-center'}).append(
-        $('<i/>', {'class': 'fas fa-user'})
+      $('<div/>', { 'id': streamId + '_no-video', 'class': 'no-video-overlay text-center' }).append(
+        $('<i/>', { 'class': 'fas fa-user' })
       ),
-      $('<div/>', {'id': 'agora_remote_' + streamId, 'class': 'remote-video'})
+      $('<div/>', { 'id': 'agora_remote_' + streamId, 'class': 'remote-video' })
     )
   );
-  remoteStream.play('agora_remote_' + streamId); 
+  remoteStream.play('agora_remote_' + streamId);
 
   var containerId = '#' + streamId + '_container';
-  $(containerId).dblclick(function() {
+  $(containerId).dblclick(function () {
     client.removeInjectStreamUrl(injectedStreamURL);
     $(containerId).remove();
   });

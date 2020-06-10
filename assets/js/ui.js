@@ -16,7 +16,8 @@ function enableUiControls() {
 
   $("#exit-btn").click(function () {
     console.log("so sad to see you leave the channel");
-    leaveChannel();
+    $('.toast').toast('show');
+    setTimeout(leaveChannel(), 30000)
   });
 
   // $("#start-RTMP-broadcast").click(function () {
@@ -44,7 +45,8 @@ function enableUiControls() {
         break;
       case "q":
         console.log("so sad to see you quit the channel");
-        leaveChannel();
+        $('.toast').toast('show');
+        setTimeout(leaveChannel(), 30000)
         break;
       default:  // do nothing
     }
