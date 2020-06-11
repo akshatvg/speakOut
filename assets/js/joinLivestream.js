@@ -3,7 +3,7 @@
  */
 
 var agoraAppId = 'a6af85f840ef43108491705e2315a857'; // set app id
-var channelName = 'AgoraBroadcastDemo'; // set channel name
+var channelName = 'hi'; // set channel name
 
 // create client 
 var client = AgoraRTC.createClient({mode: 'live', codec: 'vp8'}); // vp8 to work across mobile devices

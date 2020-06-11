@@ -208,6 +208,7 @@ button:focus {
   min-height: 64px;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  z-index: 20000;
 }
 
 .navbar-custom a {
@@ -247,6 +248,15 @@ nav ul a {
   position: absolute;
   top: 80px;
   right: 20px;
+  background: #2F3FB0;
+  color: white;
+  z-index: 10001;
+}
+
+.toast-header {
+  background: #2F3FB0;
+  color: white;
+  z-index: 10001;
 }
 
 /* Video Call */
@@ -261,4 +271,65 @@ nav ul a {
 /* Dropdown Item */
 .dropdown-item {
   cursor: pointer;
+}
+
+/* Button(s): speakOut */
+.btn-speakout {
+  background-color: #2F3FB0;
+  color: white;
+  border: 1px solid #2F3FB0;
+  border-radius: 30px;
+  min-width: 200px;
+  max-width: 350px;
+  min-height: 45px;
+  max-height: 55px;
+}
+
+.btn-speakout:hover {
+  background-color: white;
+  color: #2F3FB0;
+  border: 1px solid #2F3FB0;
+}
+
+.btn-actions-vc {
+  background-color: rgba(0, 0, 0, 0.548);
+  border: 1px solid rgba(0, 0, 0, 0.548);
+  color: white;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-actions-vc:hover,
+.btn-actions-vc:focus {
+  background-color: rgba(245, 245, 245, 0.452);
+  border: 1px solid rgba(0, 0, 0, 0.548);
+  color: rgba(0, 0, 0, 0.548);
+  border-radius: 10px;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-actions-vc-danger {
+  background-color: red;
+  border: 1px solid red;
+  color: white;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-actions-vc-danger:hover,
+.btn-actions-vc-danger:focus {
+  background-color: rgba(245, 245, 245, 0.452);
+  border: 1px solid red;
+  color: red;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Live Channel Modal */
+#modalForm {
+  transform: translateY(20%) scaleX(1) !important;
 }

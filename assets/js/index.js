@@ -90,12 +90,6 @@ function enableChannelBtn() {
     $("#join-channel").html("Join Channel");
 }
 
-// Channel Join Modal
-$(document).ready(function () {
-    $('#modalForm').modal();
-    $("#modalForm").modal("show");
-});
-
 // Keypress Join Channel
 $(document).keypress(function (event) {
     var keycode = (event.keyCode ? event.keyCode : event.which);
@@ -114,6 +108,7 @@ $(document).ready(function () {
 $("#mic-btn").prop("disabled", true);
 $("#video-btn").prop("disabled", true);
 $("#exit-btn").prop("disabled", true);
+
 // Show Form on Page Load
 $(document).ready(function () {
     $("#modalForm").modal("show");
