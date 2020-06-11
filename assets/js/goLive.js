@@ -90,6 +90,8 @@ function createCameraStream(uid, deviceIds) {
       $("#mic-btn").prop("disabled", false);
       $("#video-btn").prop("disabled", false);
       $("#exit-btn").prop("disabled", false);
+      $("#mic-dropdown").prop("disabled", false);
+      $("#cam-dropdown").prop("disabled", false);
     }
     client.publish(localStream, function (err) {
     });
@@ -108,6 +110,8 @@ function leaveChannel() {
     $('#mic-btn').prop('disabled', true);
     $('#video-btn').prop('disabled', true);
     $('#exit-btn').prop('disabled', true);
+    $("#mic-dropdown").prop("disabled", true);
+    $("#cam-dropdown").prop("disabled", true);
   }, function (err) {
   });
 }
@@ -215,6 +219,8 @@ function enableUiControls() {
   $("#mic-btn").prop("disabled", false);
   $("#video-btn").prop("disabled", false);
   $("#exit-btn").prop("disabled", false);
+  $("#cam-dropdown").prop("disabled", false);
+  $("#mic-dropdown").prop("disabled", false);
   $("#mic-btn").click(function () {
     toggleMic();
   });
@@ -281,6 +287,13 @@ function enableChannelBtn() {
   $('#form-channel').attr('disabled', false);
   $("#join-channel").html("Join Channel");
 }
+
+// Disable Btns
+$("#mic-btn").prop("disabled", true);
+$("#video-btn").prop("disabled", true);
+$("#exit-btn").prop("disabled", true);
+$("#cam-dropdown").prop("disabled", true);
+$("#mic-dropdown").prop("disabled", true);
 
 // Loader
 $(function () {
