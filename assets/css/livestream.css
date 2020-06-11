@@ -333,3 +333,10 @@ nav ul a {
 #modalForm {
   transform: translateY(20%) scaleX(1) !important;
 }
+
+/* Readonly */
+input[readonly],
+.form-control:disabled,
+.form-control[readonly] {
+    background-color: white;
+}

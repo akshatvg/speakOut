@@ -88,6 +88,7 @@ client.on("unmute-video", function (evt) {
 
 // Join a Channel
 function joinChannel(channelName) {
+    disableChannelBtn();
     var token = generateToken();
     var userID = null;
     client.join(token, channelName, userID, function (uid) {
@@ -144,6 +145,7 @@ function addRemoteStreamMiniView(remoteStream) {
 
 // Leave Channel
 function leaveChannel() {
+    enableChannelBtn();
     client.leave(function () {
         localStreams.camera.stream.stop()
         client.unpublish(localStreams.camera.stream);
@@ -164,5 +166,22 @@ function leaveChannel() {
 function generateToken() {
     return null;
 }
+
+// Video Call Controls
+$("#mic-btn").prop("disabled", true);
+$("#video-btn").prop("disabled", true);
+$("#exit-btn").prop("disabled", true);
+
+// Loader
+$(function () {
+    var loader = function () {
+        setTimeout(function () {
+            if ($('#loader').length > 0) {
+                $('#loader').removeClass('show');
+            }
+        }, 1000);
+    };
+    loader();
+});
 
 console.clear();

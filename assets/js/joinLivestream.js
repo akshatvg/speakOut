@@ -1,7 +1,4 @@
-/**
- * Agora Broadcast Client 
- */
-
+// Defaults
 var agoraAppId = 'a6af85f840ef43108491705e2315a857'; // set app id
 var channelName = 'hi'; // set channel name
 
@@ -150,3 +147,17 @@ function addRemoteStreamMiniView(remoteStream){
     $(containerId).remove();
   });
 }
+
+// Loader
+$(function () {
+  var loader = function () {
+    setTimeout(function () {
+      if ($('#loader').length > 0) {
+        $('#loader').removeClass('show');
+      }
+    }, 1000);
+  };
+  loader();
+});
+
+console.clear();

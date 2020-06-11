@@ -50,6 +50,7 @@ client.on('stream-removed', function (evt) {
 
 // Join Channel
 function joinChannel(channelName) {
+  disableChannelBtn();
   var token = generateToken();
   var userID = null;
   // It's a Host
@@ -99,6 +100,7 @@ function createCameraStream(uid, deviceIds) {
 
 // Leave Channel
 function leaveChannel() {
+  enableChannelBtn();
   client.leave(function () {
     localStreams.camera.stream.stop()
     localStreams.camera.stream.close();
@@ -203,7 +205,7 @@ $("#join-channel").click(function (event) {
 $(document).keypress(function (event) {
   var keycode = (event.keyCode ? event.keyCode : event.which);
   if (keycode == '13') {
-      $("#join-channel").trigger('click');
+    $("#join-channel").trigger('click');
   }
 });
 
@@ -222,6 +224,7 @@ function enableUiControls() {
   $("#exit-btn").click(function () {
     $('.toast').toast('show');
     setTimeout(leaveChannel(), 900000)
+    $("#modalForm").modal("show");
   });
 
   // Shortcuts
@@ -236,6 +239,7 @@ function enableUiControls() {
       case "q":
         $('.toast').toast('show');
         setTimeout(leaveChannel(), 900000)
+        $("#modalForm").modal("show");
         break;
       default:
     }
@@ -244,22 +248,50 @@ function enableUiControls() {
 
 // Toggle Mic
 function toggleMic() {
-  $("#mic-icon").toggleClass('fa-microphone').toggleClass('fa-microphone-slash'); // toggle the mic icon
+  $("#mic-icon").toggleClass('fa-microphone').toggleClass('fa-microphone-slash');
   if ($("#mic-icon").hasClass('fa-microphone')) {
-    localStreams.camera.stream.unmuteAudio(); // enable the local mic
+    localStreams.camera.stream.unmuteAudio();
   } else {
-    localStreams.camera.stream.muteAudio(); // mute the local mic
+    localStreams.camera.stream.muteAudio();
   }
 }
 
 // Toggle Video
 function toggleVideo() {
   if ($("#video-icon").hasClass('fa-video')) {
-    localStreams.camera.stream.muteVideo(); // enable the local video
+    localStreams.camera.stream.muteVideo();
     console.log("muteVideo");
   } else {
-    localStreams.camera.stream.unmuteVideo(); // disable the local video
+    localStreams.camera.stream.unmuteVideo();
     console.log("unMuteVideo");
   }
-  $("#video-icon").toggleClass('fa-video').toggleClass('fa-video-slash'); // toggle the video icon
+  $("#video-icon").toggleClass('fa-video').toggleClass('fa-video-slash');
 }
+
+// Disable Channel Btn
+function disableChannelBtn() {
+  $('#join-channel').attr('disabled', true);
+  $('#form-channel').attr('disabled', true);
+  $("#join-channel").html("Channel Already Chosen");
+}
+
+// Enable Channel Btn
+function enableChannelBtn() {
+  $('#join-channel').attr('disabled', false);
+  $('#form-channel').attr('disabled', false);
+  $("#join-channel").html("Join Channel");
+}
+
+// Loader
+$(function () {
+  var loader = function () {
+    setTimeout(function () {
+      if ($('#loader').length > 0) {
+        $('#loader').removeClass('show');
+      }
+    }, 1000);
+  };
+  loader();
+});
+
+console.clear();

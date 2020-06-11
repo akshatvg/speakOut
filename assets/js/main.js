@@ -28,10 +28,6 @@
         $('.carousel').carousel('next');
     });
 
-    // Video Call Controls
-    $("#mic-btn").prop("disabled", true);
-    $("#video-btn").prop("disabled", true);
-    $("#screen-share-btn").prop("disabled", true);
-    $("#exit-btn").prop("disabled", true);
-
 })(jQuery);
+
+console.clear();
