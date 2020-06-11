@@ -213,7 +213,6 @@ $(document).keypress(function (event) {
   }
 });
 
-
 // Action buttons
 function enableUiControls() {
   $("#mic-btn").prop("disabled", false);
