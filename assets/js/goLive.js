@@ -1,7 +1,4 @@
 // Defaults
-var agoraAppId = 'a6af85f840ef43108491705e2315a857';
-// var channelName = $('#form-channel').val();
-var channelName = "hi";
 var client = AgoraRTC.createClient({ mode: 'live', codec: 'vp8' });
 var mainStreamId;
 var cameraVideoProfile = '720p_6';
@@ -19,11 +16,12 @@ var devices = {
 }
 
 // Initialise Agora CDN
-client.init(agoraAppId, function () {
-  console.log('AgoraRTC client initialized');
-  joinChannel();
-}, function (err) {
-});
+function initClientAndJoinChannel(agoraAppId, channelName) {
+  client.init(agoraAppId, function () {
+    joinChannel(channelName);
+  }, function (err) {
+  });
+}
 
 // Connect New People
 client.on('stream-added', function (evt) {
@@ -51,7 +49,7 @@ client.on('stream-removed', function (evt) {
 });
 
 // Join Channel
-function joinChannel() {
+function joinChannel(channelName) {
   var token = generateToken();
   var userID = null;
   // It's a Host
@@ -186,4 +184,82 @@ function getMicDevices() {
       changeStreamSource(index, "audio");
     });
   });
+}
+
+// Show Form on Page Load
+$(document).ready(function () {
+  $("#modalForm").modal("show");
+});
+
+// Join Channel Modal
+$("#join-channel").click(function (event) {
+  var agoraAppId = "a6af85f840ef43108491705e2315a857";
+  var channelName = $('#form-channel').val();
+  initClientAndJoinChannel(agoraAppId, channelName);
+  $("#modalForm").modal("hide");
+});
+
+// Keypress Join Channel
+$(document).keypress(function (event) {
+  var keycode = (event.keyCode ? event.keyCode : event.which);
+  if (keycode == '13') {
+      $("#join-channel").trigger('click');
+  }
+});
+
+
+// Action buttons
+function enableUiControls() {
+  $("#mic-btn").prop("disabled", false);
+  $("#video-btn").prop("disabled", false);
+  $("#exit-btn").prop("disabled", false);
+  $("#mic-btn").click(function () {
+    toggleMic();
+  });
+  $("#video-btn").click(function () {
+    toggleVideo();
+  });
+  $("#exit-btn").click(function () {
+    $('.toast').toast('show');
+    setTimeout(leaveChannel(), 900000)
+  });
+
+  // Shortcuts
+  $(document).keypress(function (e) {
+    switch (e.key) {
+      case "m":
+        toggleMic();
+        break;
+      case "v":
+        toggleVideo();
+        break;
+      case "q":
+        $('.toast').toast('show');
+        setTimeout(leaveChannel(), 900000)
+        break;
+      default:
+    }
+  });
+}
+
+// Toggle Mic
+function toggleMic() {
+  $("#mic-icon").toggleClass('fa-microphone').toggleClass('fa-microphone-slash'); // toggle the mic icon
+  if ($("#mic-icon").hasClass('fa-microphone')) {
+    localStreams.camera.stream.unmuteAudio(); // enable the local mic
+  } else {
+    localStreams.camera.stream.muteAudio(); // mute the local mic
+  }
+}
+
+// Toggle Video
+function toggleVideo() {
+  if ($("#video-icon").hasClass('fa-video')) {
+    localStreams.camera.stream.muteVideo(); // enable the local video
+    console.log("muteVideo");
+  } else {
+    localStreams.camera.stream.unmuteVideo(); // disable the local video
+    console.log("unMuteVideo");
+  }
+  $("#video-icon").toggleClass('fa-video').toggleClass('fa-video-slash'); // toggle the video icon
 }
