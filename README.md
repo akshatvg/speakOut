@@ -12,8 +12,8 @@ Conduct meetings, livestreams, project reviews & informal hangout sessions using
 
 ![Generic badge](https://img.shields.io/badge/speakOut-With_Agora-orange) 
 
-#### Link for [demo](https://speakout.akshatvg.com) 
-[![Generic badge](https://img.shields.io/badge/view-demo-orange)](https://speakout.akshatvg.com)
+#### Link for [demo](https://bit.ly/speakOutDemo) 
+[![Generic badge](https://img.shields.io/badge/view-demo-orange)](https://bit.ly/speakOutDemo)
 
 ## Useful Links
 
