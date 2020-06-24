@@ -63,7 +63,7 @@ function toggleMic(localStream) {
     }
 }
 
-// Tooggle Video
+// Toggle Video
 function toggleVideo(localStream) {
     toggleBtn($("#video-btn"));
     $("#video-icon").toggleClass('fa-video').toggleClass('fa-video-slash');
